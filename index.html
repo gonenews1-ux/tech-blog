@@ -17,23 +17,20 @@
 
   <!-- NAVBAR -->
 
-  <header class="navbar">
+<header class="navbar">
 
-    <div class="logo">PRO BLOG</div>
+  <div class="logo">PRO BLOG</div>
 
-    <nav>
-      <ul class="nav-links">
-        <li><a href="#">Home</a></li>
-        <li><a href="#">Blogs</a></li>
-        <li><a href="#">Categories</a></li>
-        <li><a href="#">About</a></li>
-        <li><a href="#">Contact</a></li>
-      </ul>
-    </nav>
+  <input type="text" id="searchBox" placeholder="Search blogs...">
 
-  </header>
+  <nav>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="#categories">Categories</a></li>
+    </ul>
+  </nav>
 
-
+</header>
   <!-- HERO SECTION -->
 
   <section class="hero">
@@ -51,7 +48,20 @@
     </div>
 
   </section>
+<section id="categories" class="categories">
 
+  <h2>Categories</h2>
+
+  <div class="cat-box">
+
+    <div>💻 Tech</div>
+    <div>💰 Make Money</div>
+    <div>📈 SEO</div>
+    <div>📰 News</div>
+
+  </div>
+
+</section>
 
   <!-- BLOG SECTION -->
 
@@ -140,6 +150,27 @@
     <p>© 2026 Professional Blog Website</p>
 
   </footer>
+<script>
+const searchBox = document.getElementById("searchBox");
+const cards = document.querySelectorAll(".blog-card");
 
+searchBox.addEventListener("keyup", function() {
+
+  let value = searchBox.value.toLowerCase();
+
+  cards.forEach(card => {
+
+    let text = card.innerText.toLowerCase();
+
+    if(text.includes(value)){
+      card.style.display = "block";
+    } else {
+      card.style.display = "none";
+    }
+
+  });
+
+});
+</script>
 </body>
 </html>
