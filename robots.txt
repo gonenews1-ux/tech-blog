@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://gonenews1-ux.github.io/Teach-blog/sitemap.xml
